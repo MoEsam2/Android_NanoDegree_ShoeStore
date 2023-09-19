@@ -9,14 +9,15 @@
         tools:context=".ui.WelcomeFragment">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/welcome_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="100dp"
             android:src="@drawable/welcome"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:adjustViewBounds="true"/>
 
         <TextView
             android:id="@+id/welcome_text_view"
@@ -25,11 +26,12 @@
             android:layout_marginTop="54dp"
             android:text="Welcome to our shoe store"
             android:textAlignment="center"
-            android:textSize="26sp"
+            android:textSize="36sp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/welcome_image"
+            />
 
         <TextView
             android:id="@+id/welcome_detail_text"
@@ -41,7 +43,8 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_text_view" />
+            app:layout_constraintTop_toBottomOf="@+id/welcome_text_view"
+            />
 
         <Button
             android:layout_marginStart="16dp"
