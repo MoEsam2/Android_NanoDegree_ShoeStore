@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Android_NanoDegree_ShoeStore</string>
+    <string name="add_shoe">Add shoe</string>
+    <string name="shoe_name">Shoe Name</string>
+    <string name="company_name">Company Name</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="shoe_description">Shoe Description</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>
