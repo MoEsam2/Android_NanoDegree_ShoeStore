@@ -67,7 +67,7 @@
 
         <Button
             android:id="@+id/login_button"
-            style="@style/DefaultText"
+            style="@style/DefaultButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_large"
@@ -81,7 +81,7 @@
 
         <Button
             android:id="@+id/signUp_button"
-            style="@style/DefaultText"
+            style="@style/DefaultButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_large"

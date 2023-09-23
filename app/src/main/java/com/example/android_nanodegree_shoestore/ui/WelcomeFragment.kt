@@ -17,10 +17,13 @@ class WelcomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
+
         binding.nextButton.setOnClickListener {
             navigateToInstructionsFragment()
         }
+
         return binding.root
     }
     private fun navigateToInstructionsFragment() {

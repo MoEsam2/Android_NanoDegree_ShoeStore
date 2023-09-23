@@ -21,15 +21,27 @@
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">20sp</item>
     </style>
+
     <style name="DefaultTextBold" parent="DefaultText">
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="DefaultTitle" parent="DefaultTextBold">
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">34sp</item>
+        <item name="android:textColor">#453F3F</item>
     </style>
+
     <style name="DefaultButton" parent="DefaultTextBold">
         <item name="backgroundTint">@color/colorPrimary</item>
-        <item name="background" >@drawable/my_button</item>
+        <item name="background">@drawable/my_button</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="DefaultDescription">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#686E6D</item>
+        <item name="fontFamily">@font/noto_sans</item>
     </style>
 </resources>

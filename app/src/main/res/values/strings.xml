@@ -13,4 +13,10 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="sign_up">Sign up</string>
+    <string name="welcome_title">Welcome to our shoe store</string>
+    <string name="welcome_description">Capture your item , get info and instantly buy</string>
+    <string name="next">Next</string>
+    <string name="instructions_title">Welcome to our shoe store instruction</string>
+    <string name="instruction_description">Start your journey by clicking start</string>
+    <string name="start">Start</string>
 </resources>

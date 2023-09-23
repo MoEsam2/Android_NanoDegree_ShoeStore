@@ -18,10 +18,13 @@ class InstructionsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = DataBindingUtil.inflate(inflater , R.layout.fragment_instructions , container ,false)
+
         binding.startButton.setOnClickListener {
             navigateToShoeListFragment()
         }
+
         return binding.root
     }
     private fun navigateToShoeListFragment() {
