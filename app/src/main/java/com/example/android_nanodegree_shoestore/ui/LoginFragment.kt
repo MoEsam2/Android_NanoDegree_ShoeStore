@@ -18,13 +18,16 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+
         binding.loginButton.setOnClickListener {
             navigateToWelcomeFragment()
         }
         binding.signUpButton.setOnClickListener {
             navigateToWelcomeFragment()
         }
+
         return binding.root
     }
 
