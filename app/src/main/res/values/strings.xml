@@ -19,4 +19,5 @@
     <string name="instructions_title">Welcome to our shoe store instruction</string>
     <string name="instruction_description">Start your journey by clicking start</string>
     <string name="start">Start</string>
+    <string name="detail_title">Enter Your show detail here</string>
 </resources>

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -20,6 +19,7 @@ class ShoeDetailFragment : Fragment() {
     private val binding by lazy {
         FragmentShoeDetailBinding.inflate(layoutInflater)
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,8 +38,7 @@ class ShoeDetailFragment : Fragment() {
                     requireView(),
                     getString(R.string.incomplete_text),
                     Snackbar.LENGTH_LONG
-                )
-                    .show()
+                ).show()
             }
         }
 
@@ -47,6 +46,7 @@ class ShoeDetailFragment : Fragment() {
         binding.cancelButton.setOnClickListener {
             navigateToShoeListFragment()
         }
+
         return binding.root
     }
 

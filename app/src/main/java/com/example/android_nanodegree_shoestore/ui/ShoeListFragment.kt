@@ -18,7 +18,7 @@ import com.example.android_nanodegree_shoestore.databinding.FragmentShoeListBind
 import com.example.android_nanodegree_shoestore.viewmodel.ShoeViewModel
 import kotlinx.android.synthetic.main.item_shoe.view.textView
 
-class ShoeListFragment : Fragment(), MenuProvider {
+class ShoeListFragment : Fragment() {
 
     private val viewModel: ShoeViewModel by activityViewModels()
     private val binding by lazy {
@@ -30,8 +30,26 @@ class ShoeListFragment : Fragment(), MenuProvider {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val menuHost: MenuHost = requireActivity()
-        menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.menu_shoe_list, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.action_logout -> {
+                        navigateToLoginFragment()
+                        true
+                    }
+
+                    else -> false
+                }
+
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
 
         viewModel.shoeList.observe(viewLifecycleOwner) {
             binding.shoeList.removeAllViews()
@@ -39,6 +57,7 @@ class ShoeListFragment : Fragment(), MenuProvider {
                 addShoe(shoe.name)
             }
         }
+
         binding.addShoeButton.setOnClickListener {
             navigateToShoeDetailFragment()
         }
@@ -63,20 +82,4 @@ class ShoeListFragment : Fragment(), MenuProvider {
         findNavController().navigate(action)
     }
 
-    override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-        menuInflater.inflate(R.menu.menu_shoe_list, menu)
-    }
-
-    override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-        return when (menuItem.itemId) {
-            R.id.action_logout -> {
-                navigateToLoginFragment()
-                true
-            }
-
-            else -> false
-
-        }
-
-    }
 }

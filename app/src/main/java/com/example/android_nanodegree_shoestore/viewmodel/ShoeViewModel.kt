@@ -9,6 +9,7 @@ class ShoeViewModel : ViewModel() {
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList
+
     var newShoeName = ""
     var newShoeSize = ""
     var newCompanyName = ""
