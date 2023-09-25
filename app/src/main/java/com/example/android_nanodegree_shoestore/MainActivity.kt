@@ -19,14 +19,21 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
+        setUpNavigation()
+
+    }
+
+    private fun setUpNavigation() {
+        initNavHost()
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setSupportActionBar(binding.toolbar)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    private fun initNavHost() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
                 as NavHostFragment
         navController = navHostFragment.findNavController()
-
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-
-        setSupportActionBar(binding.toolbar)
-        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
