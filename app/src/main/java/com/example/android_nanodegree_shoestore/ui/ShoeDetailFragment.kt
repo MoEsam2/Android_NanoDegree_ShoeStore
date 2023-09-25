@@ -26,8 +26,8 @@ class ShoeDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        viewModel.restNewShoe()
         binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
 
         binding.saveButton.setOnClickListener {

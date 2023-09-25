@@ -31,6 +31,23 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        addMenu()
+
+        viewModel.shoeList.observe(viewLifecycleOwner) {
+            for (shoe in it) {
+                addShoe(shoe.name)
+            }
+        }
+
+        binding.addShoeButton.setOnClickListener {
+            viewModel.restNewShoe()
+            navigateToShoeDetailFragment()
+        }
+
+        return binding.root
+    }
+
+    private fun addMenu() {
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(object : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
@@ -49,20 +66,6 @@ class ShoeListFragment : Fragment() {
 
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
-
-
-        viewModel.shoeList.observe(viewLifecycleOwner) {
-            binding.shoeList.removeAllViews()
-            for (shoe in it) {
-                addShoe(shoe.name)
-            }
-        }
-
-        binding.addShoeButton.setOnClickListener {
-            navigateToShoeDetailFragment()
-        }
-
-        return binding.root
     }
 
 

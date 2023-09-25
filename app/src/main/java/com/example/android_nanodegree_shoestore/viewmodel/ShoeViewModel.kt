@@ -27,7 +27,7 @@ class ShoeViewModel : ViewModel() {
     }
 
     fun addNewShoe(): Boolean {
-        if (!validateNewShoeInputs()) return false
+        if (validateNewShoeInputs().not()) return false
         else {
             addShoe(
                 newShoeName, newShoeSize.toDouble(), newCompanyName, newShoeDescription
